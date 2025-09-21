@@ -1,17 +1,27 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
+import { Inter, Poppins } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+})
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+})
 
 export const metadata: Metadata = {
-  title: "Krivya - Fighting Misinformation, One Click at a Time",
-  description: "Advanced misinformation detection browser extension powered by AI",
-  generator: "v0.app",
+  title: "Ask Krivya - Smart Text Analysis",
+  description: "Analyze text for facts and emotions with AI-powered insights from your browser extension",
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -20,14 +30,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
-        <Navbar />
-        <main className="pt-16">
-          <Suspense fallback={null}>{children}</Suspense>
-        </main>
-        <Footer />
-        <Analytics />
+    <html lang="en">
+      <body className={`font-sans ${inter.variable} ${poppins.variable} antialiased`}>
+        <Suspense fallback={<div>Loading...</div>}>
+          {children}
+          <Analytics />
+        </Suspense>
       </body>
     </html>
   )

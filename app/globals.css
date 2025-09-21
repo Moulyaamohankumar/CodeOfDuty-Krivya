@@ -1,85 +1,65 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap");
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* News/misinformation themed dark palette */
+  --background: oklch(0.06 0.008 240); /* Deep newsroom dark */
+  --foreground: oklch(0.96 0.005 240); /* Crisp white text */
+  --card: oklch(0.1 0.01 240); /* News card background */
+  --card-foreground: oklch(0.96 0.005 240);
+  --popover: oklch(0.1 0.01 240);
+  --popover-foreground: oklch(0.96 0.005 240);
+  --primary: oklch(0.65 0.15 220); /* News blue */
+  --primary-foreground: oklch(0.06 0.008 240);
+  --secondary: oklch(0.16 0.012 240); /* Newsprint gray */
+  --secondary-foreground: oklch(0.96 0.005 240);
+  --muted: oklch(0.14 0.01 240); /* Muted newsroom */
+  --muted-foreground: oklch(0.65 0.012 240);
+  --accent: oklch(0.7 0.18 15); /* Breaking news red */
+  --accent-foreground: oklch(0.06 0.008 240);
+  --destructive: oklch(0.65 0.2 15); /* Alert red */
+  --destructive-foreground: oklch(0.96 0.005 240);
+  --border: oklch(0.18 0.012 240); /* Subtle news border */
+  --input: oklch(0.12 0.01 240); /* Input background */
+  --ring: oklch(0.65 0.15 220); /* Focus ring */
+
+  /* News analysis colors */
+  --fact-based: oklch(0.68 0.15 160); /* Verified green */
+  --fact-based-foreground: oklch(0.06 0.008 240);
+  --fact-based-light: oklch(0.16 0.06 160); /* Dark verified background */
+  --emotion-based: oklch(0.72 0.18 35); /* Opinion amber */
+  --emotion-based-foreground: oklch(0.06 0.008 240);
+  --emotion-based-light: oklch(0.16 0.08 35); /* Dark opinion background */
+
+  /* News accent colors */
+  --accent-purple: oklch(0.66 0.15 280); /* Editorial purple */
+  --accent-blue: oklch(0.65 0.15 220); /* News blue */
+  --accent-green: oklch(0.68 0.15 140); /* Fact-check green */
+  --breaking-red: oklch(0.7 0.18 15); /* Breaking news red */
+  --warning-orange: oklch(0.75 0.16 50); /* Misinformation warning */
+
+  --chart-1: oklch(0.68 0.15 160);
+  --chart-2: oklch(0.72 0.18 35);
+  --chart-3: oklch(0.65 0.15 220);
+  --chart-4: oklch(0.66 0.15 280);
+  --chart-5: oklch(0.68 0.15 140);
+
+  --radius: 0.75rem; /* Professional radius */
+
+  --sidebar: oklch(0.08 0.01 240);
+  --sidebar-foreground: oklch(0.96 0.005 240);
+  --sidebar-primary: oklch(0.65 0.15 220);
+  --sidebar-primary-foreground: oklch(0.06 0.008 240);
+  --sidebar-accent: oklch(0.14 0.01 240);
+  --sidebar-accent-foreground: oklch(0.96 0.005 240);
+  --sidebar-border: oklch(0.18 0.012 240);
+  --sidebar-ring: oklch(0.65 0.15 220);
 }
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
-}
-
-@theme inline {
-  --font-inter: "Inter", sans-serif;
-  --font-jetbrains: "JetBrains Mono", monospace;
+@theme {
   --font-sans: var(--font-inter);
-  --font-mono: var(--font-jetbrains);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -99,6 +79,25 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
+  --color-fact-based: var(--fact-based);
+  --color-fact-based-foreground: var(--fact-based-foreground);
+  --color-fact-based-light: var(--fact-based-light);
+  --color-emotion-based: var(--emotion-based);
+  --color-emotion-based-foreground: var(--emotion-based-foreground);
+  --color-emotion-based-light: var(--emotion-based-light);
+
+  --color-accent-purple: var(--accent-purple);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-green: var(--accent-green);
+  --color-breaking-red: var(--breaking-red);
+  --color-warning-orange: var(--warning-orange);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -117,190 +116,200 @@
   * {
     @apply border-border outline-ring/50;
   }
-
   body {
-    @apply bg-background text-foreground font-sans;
-    font-feature-settings: "rlig" 1, "calt" 1;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-    /* Pure black background for mature aesthetic */
-    background: #000000;
+    /* News-themed animated background with floating information particles */
+    background: oklch(0.06 0.008 240);
+    @apply text-foreground font-sans leading-relaxed;
     position: relative;
+    overflow-x: hidden;
   }
 
-  /* Sophisticated news-themed background with subtle animations */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: linear-gradient(
+      135deg,
+      oklch(0.06 0.008 240) 0%,
+      oklch(0.08 0.01 220) 25%,
+      oklch(0.07 0.009 260) 50%,
+      oklch(0.06 0.008 240) 75%,
+      oklch(0.08 0.012 200) 100%
+    );
+    background-size: 400% 400%;
+    animation: news-gradient-shift 20s ease infinite;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: radial-gradient(circle at 15% 25%, rgba(104, 178, 255, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 85% 75%, rgba(255, 100, 50, 0.06) 0%, transparent 40%),
+      radial-gradient(circle at 45% 60%, rgba(0, 255, 150, 0.05) 0%, transparent 35%),
+      radial-gradient(circle at 70% 20%, rgba(255, 200, 0, 0.04) 0%, transparent 30%);
+    animation: news-particles-float 25s ease-in-out infinite;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    @apply transition-all duration-300 ease-out;
+  }
+}
+
+/* News and misinformation themed animations */
+@keyframes news-gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 25%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  75% {
+    background-position: 25% 0%;
+  }
+}
+
+@keyframes news-particles-float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-30px) rotate(90deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-15px) rotate(180deg);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translateY(-45px) rotate(270deg);
+    opacity: 0.7;
+  }
+}
+
+@keyframes breaking-news-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(255, 100, 50, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 100, 50, 0.6);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes fact-check-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 12px rgba(0, 255, 150, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 255, 150, 0.4);
+  }
+}
+
+@keyframes misinformation-warning {
+  0%,
+  100% {
+    border-color: rgba(255, 200, 0, 0.3);
+  }
+  50% {
+    border-color: rgba(255, 200, 0, 0.7);
+  }
+}
+
+@keyframes news-ticker {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes float-up-down {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@layer utilities {
+  /* News-themed utility classes */
+  .news-background {
+    position: relative;
+    overflow: hidden;
+  }
+
   .news-background::before {
     content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-    /* Subtle geometric patterns inspired by news layouts */
-    background-image: linear-gradient(
-        45deg,
-        transparent 48%,
-        rgba(0, 255, 136, 0.02) 49%,
-        rgba(0, 255, 136, 0.02) 51%,
-        transparent 52%
-      ),
-      linear-gradient(
-        -45deg,
-        transparent 48%,
-        rgba(0, 255, 136, 0.015) 49%,
-        rgba(0, 255, 136, 0.015) 51%,
-        transparent 52%
-      ), radial-gradient(ellipse 300px 100px at 25% 40%, rgba(0, 255, 136, 0.025) 0%, transparent 60%),
-      radial-gradient(ellipse 250px 80px at 75% 60%, rgba(0, 255, 136, 0.02) 0%, transparent 60%);
-    background-size: 200px 200px, 180px 180px, 400px 200px, 350px 180px;
-    animation: subtleFloat 20s ease-in-out infinite;
-  }
-
-  /* Refined scrolling text with professional typography */
-  .news-background::after {
-    content: "FACT CHECK • VERIFIED • TRUTH ANALYSIS • MISINFORMATION DETECTION • VERIFIED SOURCE • FACT CHECK • VERIFIED • TRUTH ANALYSIS";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 2;
-    font-family: "JetBrains Mono", monospace;
-    font-size: 11px;
-    font-weight: 400;
-    color: rgba(0, 255, 136, 0.06);
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    animation: professionalScroll 35s linear infinite;
-    transform: rotate(-12deg);
-    letter-spacing: 3px;
-  }
-
-  @keyframes subtleFloat {
-    0%,
-    100% {
-      transform: translateY(0px) translateX(0px);
-      background-position: 0% 0%, 100% 100%, 0% 40%, 100% 60%;
-    }
-    50% {
-      transform: translateY(-15px) translateX(20px);
-      background-position: 50% 50%, 50% 50%, 50% 50%, 50% 50%;
-    }
-  }
-
-  @keyframes professionalScroll {
-    0% {
-      transform: translateX(-100%) rotate(-12deg);
-    }
-    100% {
-      transform: translateX(0%) rotate(-12deg);
-    }
-  }
-
-  /* Minimalist grid pattern for professional look */
-  .page-container::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-    background-image: linear-gradient(rgba(0, 255, 136, 0.008) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 255, 136, 0.008) 1px, transparent 1px);
-    background-size: 60px 60px;
-    animation: gridShift 25s linear infinite;
-  }
-
-  @keyframes gridShift {
-    0% {
-      background-position: 0 0, 0 0;
-    }
-    100% {
-      background-position: 60px 60px, 60px 60px;
-    }
-  }
-
-  /* Sophisticated card design with subtle depth */
-  .advanced-card {
-    @apply bg-black/80 border border-gray-800/50 rounded-lg backdrop-blur-sm;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .advanced-card::before {
-    content: "";
     position: absolute;
     top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.08), transparent);
-    transition: left 0.6s ease;
-    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(104, 178, 255, 0.02) 50%, transparent 70%),
+      linear-gradient(-45deg, transparent 30%, rgba(255, 100, 50, 0.015) 50%, transparent 70%);
+    animation: news-particles-float 30s ease-in-out infinite;
+    pointer-events: none;
   }
 
-  .advanced-card:hover::before {
-    left: 100%;
+  .breaking-news-card {
+    @apply border-l-4 border-l-accent bg-accent/5;
+    animation: breaking-news-pulse 3s ease-in-out infinite;
   }
 
-  .advanced-card:hover {
-    @apply border-green-500/30;
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 255, 136, 0.1);
+  .fact-check-card {
+    @apply border-l-4 border-l-fact-based bg-fact-based/5;
+    animation: fact-check-glow 4s ease-in-out infinite;
   }
 
-  /* Professional button with subtle glow */
-  .glow-button {
-    @apply bg-green-600 hover:bg-green-500 text-white rounded-md font-medium px-6 py-3;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+  .misinformation-warning {
+    @apply border-2 bg-warning-orange/5;
+    animation: misinformation-warning 2s ease-in-out infinite;
   }
 
-  .glow-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s ease;
-    z-index: 1;
-  }
-
-  .glow-button:hover::before {
-    left: 100%;
-  }
-
-  .glow-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 25px rgba(0, 255, 136, 0.4), 0 8px 20px rgba(0, 0, 0, 0.3);
-  }
-
-  /* Refined typing animation */
-  .typing-animation {
-    overflow: hidden;
-    border-right: 2px solid #00ff88;
+  .news-ticker {
     white-space: nowrap;
-    animation: typing 3s steps(40, end), blink-caret 1s step-end infinite;
+    overflow: hidden;
+    animation: news-ticker 15s linear infinite;
   }
 
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
+  .typewriter-effect {
+    overflow: hidden;
+    border-right: 2px solid rgba(104, 178, 255, 0.7);
+    white-space: nowrap;
+    animation: typewriter 3s steps(40, end), blink-caret 0.75s step-end infinite;
   }
 
   @keyframes blink-caret {
@@ -309,142 +318,115 @@
       border-color: transparent;
     }
     50% {
-      border-color: #00ff88;
+      border-color: rgba(104, 178, 255, 0.7);
     }
   }
 
-  /* Professional input styling */
-  .advanced-input {
-    @apply bg-gray-900/50 border border-gray-700/50 rounded-md px-4 py-3 text-white;
-    transition: all 0.3s ease;
-    position: relative;
-  }
-
-  .advanced-input:focus {
-    @apply border-green-500/50 outline-none;
-    box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1), 0 0 15px rgba(0, 255, 136, 0.15);
-    transform: translateY(-1px);
-  }
-
-  /* Minimalist loading spinner */
-  .loading-spinner {
-    width: 20px;
-    height: 20px;
-    border: 2px solid rgba(0, 255, 136, 0.2);
-    border-top: 2px solid #00ff88;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  /* Sophisticated link effects */
-  .link-glow {
-    @apply text-green-400;
-    position: relative;
-    transition: all 0.3s ease;
-    display: inline-block;
-  }
-
-  .link-glow::after {
-    content: "";
+  .floating-news-element {
     position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: #00ff88;
-    transition: width 0.3s ease;
+    opacity: 0.1;
+    animation: float-up-down 8s ease-in-out infinite;
   }
 
-  .link-glow:hover::after {
-    width: 100%;
+  .floating-news-element:nth-child(1) {
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
   }
 
-  .link-glow:hover {
-    color: #00ff88;
-    text-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
+  .floating-news-element:nth-child(2) {
+    top: 70%;
+    right: 10%;
+    animation-delay: 3s;
   }
 
-  /* Smooth fade-in animations */
-  .fade-in-up {
-    animation: fadeInUp 0.6s ease forwards;
-    opacity: 0;
-    transform: translateY(30px);
+  .floating-news-element:nth-child(3) {
+    bottom: 20%;
+    left: 60%;
+    animation-delay: 6s;
   }
 
-  .fade-in-up.delay-1 {
-    animation-delay: 0.1s;
-  }
-  .fade-in-up.delay-2 {
-    animation-delay: 0.2s;
-  }
-  .fade-in-up.delay-3 {
-    animation-delay: 0.3s;
-  }
-  .fade-in-up.delay-4 {
-    animation-delay: 0.4s;
-  }
-  .fade-in-up.delay-5 {
-    animation-delay: 0.5s;
+  .content-spacing {
+    padding: 3rem 0;
   }
 
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .section-spacing {
+    margin: 5rem 0;
   }
 
-  /* Refined glowing text */
-  .text-glow-green {
-    color: #00ff88;
-    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+  .news-card-hover {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .text-glow-white {
-    color: #ffffff;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  .news-card-hover:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
   }
 
-  /* Professional scroll reveal */
-  .scroll-reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.6s ease;
+  .text-news-glow {
+    text-shadow: 0 0 25px rgba(104, 178, 255, 0.6);
   }
 
-  .scroll-reveal.revealed {
-    opacity: 1;
-    transform: translateY(0);
+  .professional-card {
+    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
   }
 
-  /* Subtle holographic effect */
-  .holographic {
-    background: linear-gradient(
-      45deg,
-      rgba(0, 255, 136, 0.05) 0%,
-      rgba(0, 255, 136, 0.02) 50%,
-      rgba(0, 255, 136, 0.05) 100%
-    );
-    background-size: 200% 200%;
-    animation: holographicShift 4s ease-in-out infinite;
+  .professional-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.2);
   }
 
-  @keyframes holographicShift {
-    0%,
-    100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
+  .fact-badge {
+    @apply bg-fact-based text-fact-based-foreground border border-fact-based/30;
+  }
+
+  .emotion-badge {
+    @apply bg-emotion-based text-emotion-based-foreground border border-emotion-based/30;
+  }
+
+  .analysis-card-fact {
+    @apply border-l-2 border-l-fact-based bg-fact-based-light/20;
+  }
+
+  .analysis-card-emotion {
+    @apply border-l-2 border-l-emotion-based bg-emotion-based-light/20;
+  }
+
+  .subtle-glow {
+    animation: subtle-glow 2s ease-in-out infinite;
+  }
+
+  .fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+
+  .glass-morphism {
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .card-minimal {
+    @apply bg-card border border-border rounded-lg;
+    transition: border-color 0.2s ease;
+  }
+
+  .card-minimal:hover {
+    @apply border-primary/30;
+  }
+
+  .source-link {
+    @apply text-sm text-muted-foreground hover:text-primary transition-colors duration-200 underline decoration-dotted underline-offset-2;
+  }
+
+  /* Hide v0 branding elements */
+  [id*="v0-built-with-button"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
   }
 }

@@ -111,7 +111,7 @@ Krivya/
 
 ⚡ Getting Started
 1. Clone the Repository
-git clone https://github.com/your-username/krivya.git
+git clone https://github.com/Moulyaamohankumar/CodeOfDuty-Krivya.git
 cd krivya
 
 2. Install Dependencies

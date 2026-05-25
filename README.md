@@ -1,5 +1,5 @@
 Krivya
-
+deploy Link - https://askkrivyagenai.vercel.app/
 ✨ Fighting Misinformation, One Click at a Time
 
 Krivya is an AI-powered misinformation detection tool built as part of the Gen AI Exchange Hackathon (Phase 2).
